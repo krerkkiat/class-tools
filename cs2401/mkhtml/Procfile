@@ -1,0 +1,1 @@
+web: python mkhtml_server.py
