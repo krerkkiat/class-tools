@@ -17,16 +17,18 @@ With that being said, here is the step by step of how to set the repository up.
 0. Provide that your project is organized in the same way as the project 1 that Mr. Gray give to us (e.g. having folder called source/, the input files in the examples/)
 
 On School Machine:
+
 1. Make a directory for your project. e.g. project1.git
 2. `cd` into the directory and run `git init --bare`
 3. Copy a `post-receive` script into hooks/. Either by scp (pscp) or FileZilla.
 4. Make note of the absolute path to this folder. (run `pwd` to show the current path)
 
 On your local machine (e.g. laptop, PC at home, etc.)
+
 1. Make a directory for your project (again, I know)
 2. `cd` into it and run `git init`. Note that this time you don't need '--bare'.
 3. Config the remote repository by pointing it to the folder in your account on school machine. The `git remote add origin <your username>@<school machine host name>:<absolute path to your project folder>` should take care of that.
-e.g. `git remote add origin kc@schoolserver.edu:/home/kc/subjects/cs3610/projects/project1.git` In this case, the <username> is "kc"; the <school machine host name> is "schoolserver.edu"; the <absolute path to your project folder> "is /home/kc/subjects/cs3610/projects/project1.git"
+- e.g. `git remote add origin kc@schoolserver.edu:/home/kc/subjects/cs3610/projects/project1.git` In this case, the <username> is "kc"; the <school machine host name> is "schoolserver.edu"; the <absolute path to your project folder> "is /home/kc/subjects/cs3610/projects/project1.git"
 4. Set up the Makefile in the source folder. Make sure that it has build and run target.
 5. Now you can try to commit and use git push to push to the school machine
 6. The hook script will then automatically run the `make build` and `make run`. The result will be returned back to your local terminal by Git.
