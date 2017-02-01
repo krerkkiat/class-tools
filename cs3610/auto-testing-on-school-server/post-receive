@@ -1,0 +1,32 @@
+#!/bin/sh
+# This is the Git hook on the server side that is run
+# after the push is finish.
+#
+# This should give the server side the an automatic building and testing
+# mechanisim, so we don't have to run the scp or use the sftp client
+# to copy project's files to the server for testing.
+#
+# The command result will be transfered back to the client by Git.
+
+PROJECT_HOME=/home/kc/cs3610/projects/
+PROJECT_NAME=project1
+
+echo ""
+echo "Setting up..."
+cd $PROJECT_HOME
+mkdir tmp
+git clone "$PROJECT_NAME.git" "tmp/$PROJECT_NAME.testing"
+cd "tmp/$PROJECT_NAME.testing/source"
+
+echo ""
+echo "Building..."
+make build
+
+echo ""
+echo "Running..."
+make run
+
+echo ""
+echo "Cleaning up..."
+cd $PROJECT_HOME
+rm -rf tmp/
