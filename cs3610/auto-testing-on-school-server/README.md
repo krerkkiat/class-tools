@@ -1,4 +1,8 @@
 # auto-testing-on-school-server
+You can also ignore all of the following and use `rsync` or `sshfs`. More information can be found here:
+* [rsync](https://www.youtube.com/watch?v=vvXxLpfJ1IA)
+* [sshfs](https://youtu.be/4r8EFZHUoYQ)
+
 I am too lazy to use scp or FileZilla so...
 
 As Mr. Gray mentioned that the code should be test on the machine in Stocker lab. If you want to take that seriously, but don't want to repeatedly run scp to copy files to the machine in Stocker. (or using FileZilla to transfer files).
