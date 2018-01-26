@@ -1,0 +1,8 @@
+#!/bin/bash
+# Since I sometimes want the homework PDF file from Blackboard to be on the server. Alternative way is to download file to local machine then scp it through ssh.
+#
+# This following is totally based from this answer https://stackoverflow.com/a/23454894
+COOKIE=""
+TARGET_URL=""
+
+wget --no-cookies --header "Cookie: ${COOKIE}" $TARGET_URL 

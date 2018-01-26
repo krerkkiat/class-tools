@@ -1,2 +1,2 @@
 # class-tools
-Tools generated while in a particular class.
+Tools generated while I was enrolling in a particular class at Ohio University.
